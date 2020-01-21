@@ -30,7 +30,7 @@ function getTasks() {
   } else {
     tasks = JSON.parse(localStorage.getItem('tasks'));
   }
-  
+
   tasks.forEach(function (task) {
     // Create li element
     const li = document.createElement('li');
@@ -135,6 +135,14 @@ function clearTasks() {
   while (taskList.firstChild) {
     taskList.removeChild(taskList.firstChild);
   }
+
+  // Clear Task from LS
+  clearTasksFromLocalStorage();
+}
+
+// clear Task from LS
+function clearTasksFromLocalStorage(){
+  localStorage.clear();
 }
 
 // Filter Tasks
